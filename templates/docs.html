@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Docs
+{% endblock %}
+
+{% block body %}
+<body class="hold-transition sidebar-mini dark-mode">
+{% endblock %}
+
+{% block content %}
+<!-- Site wrapper -->
+<div class="wrapper">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Список команд</h1>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-12" id="accordion">
+                    <div class="card card-primary card-outline">
+                        <a class="d-block w-100" data-toggle="collapse" href="#collapseOne">
+                            <div class="card-header">
+                                <h4 class="card-title w-100">
+                                    !help
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                            <div class="card-body">
+                                Выводит список доступных команд.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-primary card-outline">
+                        <a class="d-block w-100" data-toggle="collapse" href="#collapseTwo">
+                            <div class="card-header">
+                                <h4 class="card-title w-100">
+                                    !userinfo [user]
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                Отображает информацию об указанном пользователе. Чтобы узнать информацию о себе, не передавайте аргумент [user].
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-warning card-outline">
+                        <a class="d-block w-100" data-toggle="collapse" href="#collapseFour">
+                            <div class="card-header">
+                                <h4 class="card-title w-100">
+                                    !kick [user] [reason]
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="collapseFour" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                Команда доступна участникам с флагом <i>kick_members</i>. Кикает указанного участника.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-warning card-outline">
+                        <a class="d-block w-100" data-toggle="collapse" href="#collapseFive">
+                            <div class="card-header">
+                                <h4 class="card-title w-100">
+                                    !clear [count]
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="collapseFive" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                Команда доступна участникам с флагом <i>manage_messages</i>. Удаляет указанное кол-во сообщений в текстовом канале, в котором была вызвана.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-danger card-outline">
+                        <a class="d-block w-100" data-toggle="collapse" href="#collapseSeven">
+                            <div class="card-header">
+                                <h4 class="card-title w-100">
+                                    !ban [user] [reason]
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="collapseSeven" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                Команда доступна участникам с флагом <i>ban_members</i>. Банит указанного участника.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-danger card-outline">
+                        <a class="d-block w-100" data-toggle="collapse" href="#collapseEight">
+                            <div class="card-header">
+                                <h4 class="card-title w-100">
+                                    !reload [cog]
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="collapseEight" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                Команда доступна участникам с флагом <i>ban_members</i>. Перезапускает указанный модуль. Например, !reload Mod.py, перезапустит модуль Mod. Следует применять данную команду после изменения настроек модулей в админ-панеле, если изменения автоматически не вступили в силу.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+</div>
+{% endblock %}

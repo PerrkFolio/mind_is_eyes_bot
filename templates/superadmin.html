@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/adminlte.min.css') }}">
+</head>
+<body class="dark-mode">
+<header>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand text-center">Управление конфигурацией</a>
+      <form class="form-inline">
+        <a href="/dashboard" class="btn btn-outline-danger my-2 my-sm-0" type="button">Выход</a>
+      </form>
+    </nav>
+</header>
+<br />
+<div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box shadow">
+          <span class="info-box-icon bg-primary"><i class="fa fa-gamepad"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Серверов</span>
+            <span class="info-box-number">{{ guild_count }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box shadow">
+          <span class="info-box-icon bg-success"><i class="fas fa-users"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Пользователей</span>
+            <span class="info-box-number">{{ user_count }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box shadow">
+          <span class="info-box-icon bg-danger"><i class="fa fa-stream"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Стримеров</span>
+            <span class="info-box-number">{{ streamer_count }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box shadow">
+          <span class="info-box-icon bg-warning"><i class="fa fa-user-secret"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Премиум подписок</span>
+            <span class="info-box-number">-</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5 col-sm-12 col-12">
+        <div class="card">
+          <div class="card-header border-0">
+            <h3 class="card-title">Управление модулями</h3>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+              <p class="text-info text-xl">
+                Mod.py
+              </p>
+              <p class="d-flex text-right">
+                <a href="/cog_action/load/Mod" class="btn btn-app">
+                  <i class="fas fa-play"></i> Запуск
+                </a>
+                <a href="/cog_action/unload/Mod" class="btn btn-app">
+                  <i class="fas fa-stop"></i> Остановка
+                </a>
+                <a href="/cog_action/reload/Mod" class="btn btn-app">
+                  <i class="fas fa-circle"></i> Перезапуск
+                </a>
+              </p>
+            </div>
+            <!-- /.d-flex -->
+            <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+              <p class="text-info text-xl">
+                Event.py
+              </p>
+              <p class="d-flex text-right">
+                <a href="/cog_action/load/Event" class="btn btn-app">
+                  <i class="fas fa-play"></i> Запуск
+                </a>
+                <a href="/cog_action/unload/Event" class="btn btn-app">
+                  <i class="fas fa-stop"></i> Остановка
+                </a>
+                <a href="/cog_action/reload/Event" class="btn btn-app">
+                  <i class="fas fa-circle"></i> Перезапуск
+                </a>
+              </p>
+            </div>
+            <!-- /.d-flex -->
+            <div class="d-flex justify-content-between align-items-center mb-0">
+              <p class="text-info text-xl">
+                Help.py
+              </p>
+              <p class="d-flex text-right">
+                <a href="/cog_action/load/Help" class="btn btn-app">
+                  <i class="fas fa-play"></i> Запуск
+                </a>
+                <a href="/cog_action/unload/Help" class="btn btn-app">
+                  <i class="fas fa-stop"></i> Остановка
+                </a>
+                <a href="/cog_action/reload/Help" class="btn btn-app">
+                  <i class="fas fa-circle"></i> Перезапуск
+                </a>
+              </p>
+            </div>
+            <!-- /.d-flex -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7 col-sm-12 col-12">
+        <div class="card">
+          <div class="card-header border-0">
+            <h3 class="card-title">Логи</h3>
+          </div>
+          <div class="card-body">
+            <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>Дата-Время</th>
+                      <th>Сообщение</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tdata">
+
+                  </tbody>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+          <div class="card card-primary">
+              <div class="card-header">
+                  <h3 class="card-title">Конфигурация</h3>
+              </div>
+              <form>
+                  <div class="card-body">
+                      <h4>Базовые</h4>
+                      <div class="form-group">
+                          <label for="botPrefix">Префикс</label>
+                          <input type="text" class="form-control" id="botPrefix" name="bot_prefix" value="{{ bot_prefix }}">
+                      </div>
+                      <div class="form-group">
+                          <label for="botDesc">Описание</label>
+                          <input type="text" class="form-control" id="botDesc" name="bot_description" value="{{ bot_description }}">
+                      </div>
+                      <br />
+                      <h4>Логирование</h4>
+                      <div class="form-group">
+                            <label for="nameLogs">Имя логов</label>
+                            <input type="text" name="log_name" class="form-control" id="nameLogs" value="{{ log_name }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="pathLogs">Путь до файла логов</label>
+                            <input type="text" name="log_path" class="form-control" id="pathLogs" value="{{ log_path }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="selectLogsLevel">Выберите уровень логирования</label>
+                            <select class="custom-select form-control-border" name="log_level" id="selectLogsLevel">
+                                <option value="debug">debug</option>
+                                <option value="info">info</option>
+                                <option value="error">error</option>
+                                <option value="critical">critical</option>
+                            </select>
+                        </div>
+                      <br />
+                      <h4>Исключения</h4>
+                      <div class="form-group">
+                          <label for="checkFailure">Отказано в доступе</label>
+                          <input type="text" name="error_checkfailure" class="form-control" id="checkFailure" value="{{ error_checkfailure }}">
+                      </div>
+                      <div class="form-group">
+                          <label for="commandNotFound">Команда не найдена</label>
+                          <input type="text" name="error_commandnotfound" class="form-control" id="commandNotFound" value="{{ error_commandnotfound }}">
+                      </div>
+                      <div class="form-group">
+                          <label for="missingRequiredArgument">Не найден нужный аргумент</label>
+                          <input type="text" name="error_missingrequiredargument" class="form-control" id="missingRequiredArgument" value="{{ error_missingrequiredargument }}">
+                      </div>
+                      <div class="form-group">
+                          <label for="badArgument">Передан неверный аргумент</label>
+                          <input type="text" name="error_badargument" class="form-control" id="badArgument" value="{{ error_badargument }}">
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                      <button type="submit" class="btn btn-primary">Обновить</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <!--/.col (right) -->
+  </div>
+</div>
+
+
+<script src="{{ url_for('static', filename='plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+<script>
+    $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+
+<script type="text/javascript">
+var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+var intervalID = setInterval(update_values,5000);
+
+
+    function update_values() {
+        $.getJSON($SCRIPT_ROOT + '/get_logs',
+
+            function(data) {
+            $('.data_item').detach();
+            data.result.forEach(function(dt){
+              $("#tdata").append("<tr class='data_item'>"+
+              "<td>"+dt.datetime+"</td>"+
+              "<td>"+dt.msg+"</td>"
+              +"</tr>"
+              );
+            });
+        });
+    };
+
+</script>
+<script src="{{ url_for('static', filename='/dist/js/bootstrap.bundle.js') }}"></script>
+<script src="{{ url_for('static', filename='dist/js/adminlte.js') }}"></script>
+</body>
+</html>

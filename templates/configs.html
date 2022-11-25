@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mind's Eye 2.0 | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+</head>
+{% block body %}{% endblock %}
+
+<!-- Navbar -->
+<nav class="main-header navbar navbar-expand navbar-dark">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/dashboard/{{ guild_id }}" class="nav-link">Информация о сервере</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/dashboard/bot_settings/{{ guild_id }}" class="nav-link">Основные настройки</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/dashboard/streams/{{ guild_id }}" class="nav-link">Предствоящие стримы</a>
+        </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+        <!-- Notifications Dropdown Menu -->
+<!--        <li class="nav-item dropdown">-->
+<!--            <a class="nav-link" data-toggle="dropdown" href="#">-->
+<!--                <i class="far fa-bell"></i>-->
+<!--                <span class="badge badge-warning navbar-badge">1</span>-->
+<!--            </a>-->
+<!--            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">-->
+<!--                <span class="dropdown-item dropdown-header">1 уведомление</span>-->
+<!--                <div class="dropdown-divider"></div>-->
+<!--                <a href="#" class="dropdown-item">-->
+<!--                    <i class="fas fa-users mr-2"></i> Новый участник-->
+<!--                    <span class="float-right text-muted text-sm">3 мин</span>-->
+<!--                </a>-->
+<!--                <div class="dropdown-divider"></div>-->
+<!--                <a href="#" class="dropdown-item dropdown-footer">Посмотреть все уведомления</a>-->
+<!--            </div>-->
+<!--        </li>-->
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-user pr-1"></i> {{ name }}#{{ disc }}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+<!-- /.navbar -->
+
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="/dashboard/main" class="brand-link">
+        <img src="../static/dist/img/bot-600x600.png" alt="Bot Image" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Mind's Eye 2.0</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Настройка модулей
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/dashboard/static_pages/mod/{{ guild_id }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Mod</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/dashboard/static_pages/events/{{ guild_id }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Events</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/dashboard/static_pages/help/{{ guild_id }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Help</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/dashboard/configs/welcome/{{ guild_id }}" class="nav-link">
+                        <i class="nav-icon far fa-envelope"></i>
+                        <p>
+                            Приветствия
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/dashboard/configs/autoroles/{{ guild_id }}" class="nav-link">
+                        <i class="nav-icon far fa-plus-square"></i>
+                        <p>
+                            Автороли
+                        </p>
+                    </a>
+                </li>
+<!--                <li class="nav-item">-->
+<!--                    <a href="/dashboard/actions/react_role/{{ guild_id }}" class="nav-link">-->
+<!--                        <i class="nav-icon fa fa-rocket"></i>-->
+<!--                        <p>-->
+<!--                            Роли по реакции-->
+<!--                        </p>-->
+<!--                    </a>-->
+<!--                </li>-->
+                <li class="nav-item">
+                    <a href="/dashboard/actions/embed/{{ guild_id }}" class="nav-link">
+                        <i class="nav-icon far fa-window-restore"></i>
+                        <p>
+                            Встраивания
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/dashboard/configs/logs/{{ guild_id }}" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            Логирование
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/dashboard/configs/errors/{{ guild_id }}" class="nav-link">
+                        <i class="nav-icon fas fa-code"></i>
+                        <p>
+                            Исключения
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">Документация</li>
+                <li class="nav-item">
+                    <a href="/dashboard/static_pages/docs/{{ guild_id }}" class="nav-link">
+                        <i class="nav-icon fas fa-file"></i>
+                        <p>
+                            Команды бота
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>
+
+{% block content %}{% endblock %}
+
+<script src="{{ url_for('static', filename='plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+<script>
+    $.widget.bridge('uibutton', $.ui.button)
+</script>
+<script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+<script src="{{ url_for('static', filename='dist/js/adminlte.js') }}"></script>
+
+
+
+</body>
+</html>

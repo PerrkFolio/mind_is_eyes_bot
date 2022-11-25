@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+
+{% block title %}
+React Role
+{% endblock %}
+
+{% block body %}
+<body class="hold-transition sidebar-mini dark-mode">
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Новое встраивание (React Role)</h1>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Отправить новое встраивание</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="selectEmbedChannel">Выберите канал.</label>
+                                        <select name="channel_embed" class="custom-select form-control-border" id="selectEmbedChannel">
+                                            {% for channel in data_channels %}
+                                            <option value="{{ channel['id'] }}">#{{ channel['name'] }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="selectEmbedColor">Цвет полоски.</label>
+                                        <select name="color_embed" class="custom-select form-control-border" id="selectEmbedColor">
+                                            <option value="#FF0000" style="color: #FF0000;">Красный</option>
+                                            <option value="#A60000" style="color: #A60000;">Бардовый</option>
+                                            <option value="#FF6C00" style="color: #FF6C00;">Оранжевый</option>
+                                            <option value="#FFAE73" style="color: #FFAE73;">Бежевый</option>
+                                            <option value="#FFD300" style="color: #FFD300;">Жёлтый</option>
+                                            <option value="#A2EF00" style="color: #A2EF00;">Лайм</option>
+                                            <option value="#00C90D" style="color: #00C90D;">Зелёный</option>
+                                            <option value="#008209" style="color: #008209;">Тёмно-зелёный</option>
+                                            <option value="#33CDC7" style="color: #33CDC7;">Голубой</option>
+                                            <option value="#1240AB" style="color: #1240AB;">Синий</option>
+                                            <option value="#06266F" style="color: #06266F;">Тёмно-синий</option>
+                                            <option value="#3914AF" style="color: #3914AF;">Фиолетово-синий</option>
+                                            <option value="#7109AA" style="color: #7109AA;">Фиолетовый</option>
+                                            <option value="#CD0074" style="color: #CD0074;">Насыщенный розовый</option>
+                                            <option value="#E6399B" style="color: #E6399B;">Розовый</option>
+                                        </select>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="title_embed" class="form-control" id="titleEmbed" placeholder="Заголовок встраивания">
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="custom-file">
+                                              <input type="file" name="main_img_embed" class="custom-file-input" id="mainImgEmbed">
+                                              <label class="custom-file-label" for="mainImgEmbed">Основное изображение</label>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="textareaEmbed">Шаблон сообщения</label>
+                                        <textarea name="text_embed" id="textareaEmbed" class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="fieldEmbed1">Название поля №1</label>
+                                        <input type="text" name="field_embed_1" class="form-control" id="fieldEmbed1">
+                                        <label for="fieldValueEmbed1">Содержание поля №1</label>
+                                        <input type="text" name="field_value_embed_1" class="form-control" id="fieldValueEmbed1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="fieldEmbed2">Название поля №2</label>
+                                        <input type="text" name="field_embed_2" class="form-control" id="fieldEmbed2">
+                                        <label for="fieldValueEmbed2">Содержание поля №2</label>
+                                        <input type="text" name="field_value_embed_2" class="form-control" id="fieldValueEmbed2">
+                                        <small>Если не планируете использовать, оставить пустым.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="fieldEmbed3">Название поля №3</label>
+                                        <input type="text" name="field_embed_3" class="form-control" id="fieldEmbed3">
+                                        <label for="fieldValueEmbed3">Содержание поля №3</label>
+                                        <input type="text" name="field_value_embed_3" class="form-control" id="fieldValueEmbed3">
+                                        <small>Если не планируете использовать, оставить пустым.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <small>Нижний колонтикул</small>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="bottomImgEmbed" class="custom-file-label">Миниатюра</label>
+                                            <input type="file" name="bt_img_embed" class="custom-file-input" id="bottomImgEmbed">
+                                        </div>
+                                      </div>
+                                      <div class="col-md-8">
+                                        <div class="form-group">
+                                            <input type="text" name="bt_text_embed" class="form-control" id="bottomTextEmbed" value="{{ react_message_info }} 1⃣">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="emojis" class="custom-label">Выбрать Emoji</label>
+                                                <a type="button" data-toggle="modal" data-target="#all_emoji">Список всех emoji</a>
+                                                <select class="select2bs4 form-control" multiple="" name="emojis[]" id="emojis" style="width:100%;">
+                                                    {% for emoji in emojis %}
+                                                    <option value="{{ emoji['unicode'] }}">{{ emoji['unicode'] }}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">Отправить</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--/.col (right) -->
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Модальное окно -->
+      <div class="modal fade" id="all_emoji" tabindex="-1" aria-labelledby="all_emoji" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="all_emoji_label">Таблица доступных Emoji</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th>Название</th>
+                      <th>Unicode</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for emoji in emojis %}
+                    <tr>
+                      <td>None</td>
+                      <td>{{emoji['unicode']}}</td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<script src="{{ url_for('static', filename='plugins/jquery/jquery.min.js') }}"></script>
+<script>
+    $(document).ready(function () {
+        $("#emojis").select2({
+            maximumSelectionSize: 3,
+            theme: 'bootstrap4'
+        });
+    });
+</script>
+{% endblock %}

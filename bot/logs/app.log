@@ -1,0 +1,253 @@
+2022-11-08 15:06:52,596 :: app.Events:135 :: INFO :: Максим П отправил сообщение: asdasd
+2022-11-08 15:06:56,989 :: app.Events:135 :: INFO :: Максим П отправил сообщение: !help
+2022-11-08 15:06:57,275 :: app.Events:135 :: INFO :: Mind's Eye 2.0 отправил сообщение: 
+2022-11-08 15:07:24,683 :: app.bot:458 :: WARNING :: Инициировано отключение модуля Help!
+2022-11-08 15:07:58,858 :: app.bot:448 :: WARNING :: Инициирована загрузка модуля Help!
+2022-11-08 15:16:50,603 :: app:528 :: DEBUG :: Логирование запущено.
+2022-11-08 15:16:53,588 :: app.bot:47 :: INFO :: Бот запущен. Имя бота: Mind's Eye 2.0.
+2022-11-08 15:19:37,378 :: app.Events:135 :: INFO :: Максим П отправил сообщение: !userinfo <@958028473568464966>
+2022-11-08 15:19:37,707 :: app.Events:135 :: INFO :: Mind's Eye 2.0 отправил сообщение: 
+2022-11-08 15:34:58,655 :: app.bot:450 :: ERROR :: Попытка загрузить модуль Event!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 447, in load_cog
+    bot.load_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 886, in load_extension
+    raise errors.ExtensionNotFound(name)
+nextcord.ext.commands.errors.ExtensionNotFound: Extension 'cogs.Event' could not be loaded.
+2022-11-08 15:36:16,208 :: app.bot:450 :: ERROR :: Попытка загрузить модуль Help!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 447, in load_cog
+    bot.load_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 882, in load_extension
+    raise errors.ExtensionAlreadyLoaded(name)
+nextcord.ext.commands.errors.ExtensionAlreadyLoaded: Extension 'cogs.Help' is already loaded.
+2022-11-08 15:36:46,566 :: app.bot:450 :: ERROR :: Попытка загрузить модуль Mod!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 447, in load_cog
+    bot.load_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 882, in load_extension
+    raise errors.ExtensionAlreadyLoaded(name)
+nextcord.ext.commands.errors.ExtensionAlreadyLoaded: Extension 'cogs.Mod' is already loaded.
+2022-11-08 15:37:22,351 :: app.Events:135 :: INFO :: Mind's Eye 2.0 отправил сообщение: Вроде работает!
+2022-11-08 15:37:47,948 :: app.Events:135 :: INFO :: Jaristo отправил сообщение: !help
+2022-11-08 15:37:48,239 :: app.Events:135 :: INFO :: Mind's Eye 2.0 отправил сообщение: 
+2022-11-08 15:38:19,453 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Help'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Help'}" has not been loaded.
+2022-11-08 15:38:32,223 :: app.bot:450 :: ERROR :: Попытка загрузить модуль Event!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 447, in load_cog
+    bot.load_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 886, in load_extension
+    raise errors.ExtensionNotFound(name)
+nextcord.ext.commands.errors.ExtensionNotFound: Extension 'cogs.Event' could not be loaded.
+2022-11-08 15:38:34,990 :: app.bot:450 :: ERROR :: Попытка загрузить модуль Help!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 447, in load_cog
+    bot.load_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 882, in load_extension
+    raise errors.ExtensionAlreadyLoaded(name)
+nextcord.ext.commands.errors.ExtensionAlreadyLoaded: Extension 'cogs.Help' is already loaded.
+2022-11-08 16:07:54,859 :: app.Events:135 :: INFO :: Mind's Eye 2.0 отправил сообщение: @Jaristo Cyber Room, @Jaristo Cyber Room, приглашаем Вас на стрим к **PERRK_DEV**! Начало в **16:30:00**
+https://www.twitch.tv/perrk_dev
+2022-11-08 16:08:47,996 :: app.Events:135 :: INFO :: Максим П отправил сообщение: ||<@&1038867206341132312> ||
+2022-11-08 21:21:16,582 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Event'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Event'}" has not been loaded.
+2022-11-08 21:21:21,171 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Help'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Help'}" has not been loaded.
+2022-11-08 21:21:27,221 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Mod'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Mod'}" has not been loaded.
+2022-11-08 21:21:28,832 :: app.bot:450 :: ERROR :: Попытка загрузить модуль Event!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 447, in load_cog
+    bot.load_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 886, in load_extension
+    raise errors.ExtensionNotFound(name)
+nextcord.ext.commands.errors.ExtensionNotFound: Extension 'cogs.Event' could not be loaded.
+2022-11-08 21:21:32,924 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Event'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Event'}" has not been loaded.
+2022-11-08 21:21:34,151 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Help'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Help'}" has not been loaded.
+2022-11-08 21:22:08,337 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Event'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Event'}" has not been loaded.
+2022-11-08 21:22:09,273 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Mod'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Mod'}" has not been loaded.
+2022-11-08 21:22:10,409 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Help'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Help'}" has not been loaded.
+2022-11-08 21:22:11,954 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Help'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Help'}" has not been loaded.
+2022-11-08 21:22:57,087 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Help'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Help'}" has not been loaded.
+2022-11-08 21:22:58,313 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Event'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Event'}" has not been loaded.
+2022-11-08 21:23:28,165 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Event'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Event'}" has not been loaded.
+2022-11-08 21:23:29,317 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Help'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Help'}" has not been loaded.
+2022-11-08 21:23:56,203 :: app.bot:450 :: ERROR :: Попытка загрузить модуль Event!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 447, in load_cog
+    bot.load_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 886, in load_extension
+    raise errors.ExtensionNotFound(name)
+nextcord.ext.commands.errors.ExtensionNotFound: Extension 'cogs.Event' could not be loaded.
+2022-11-08 21:23:57,508 :: app.bot:450 :: ERROR :: Попытка загрузить модуль Help!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 447, in load_cog
+    bot.load_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 882, in load_extension
+    raise errors.ExtensionAlreadyLoaded(name)
+nextcord.ext.commands.errors.ExtensionAlreadyLoaded: Extension 'cogs.Help' is already loaded.
+2022-11-08 21:23:59,486 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Event'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Event'}" has not been loaded.
+2022-11-08 21:24:10,252 :: app.bot:460 :: ERROR :: Попытка отключить модуль Event!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 457, in unload_cog
+    bot.unload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 926, in unload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension 'cogs.Event' has not been loaded.
+2022-11-08 21:24:11,642 :: app.bot:450 :: ERROR :: Попытка загрузить модуль Event!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 447, in load_cog
+    bot.load_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 886, in load_extension
+    raise errors.ExtensionNotFound(name)
+nextcord.ext.commands.errors.ExtensionNotFound: Extension 'cogs.Event' could not be loaded.
+2022-11-08 21:24:15,817 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Event'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Event'}" has not been loaded.
+2022-11-08 21:24:21,748 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Help'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Help'}" has not been loaded.
+2022-11-08 21:24:26,592 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Event'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Event'}" has not been loaded.
+2022-11-08 21:25:27,432 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Event'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Event'}" has not been loaded.
+2022-11-08 21:26:16,831 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Event'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Event'}" has not been loaded.
+2022-11-08 21:26:31,113 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Help'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Help'}" has not been loaded.
+2022-11-08 21:27:58,456 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Event'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Event'}" has not been loaded.
+2022-11-08 21:28:58,642 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Event'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Event'}" has not been loaded.
+2022-11-08 21:32:41,117 :: app.bot:470 :: ERROR :: Попытка перезапустить модуль {'Mod'}!
+Traceback (most recent call last):
+  File "/home/it-admin/MindIsEye/bot/bot.py", line 467, in reload_cog
+    bot.reload_extension(f"cogs.{extension}")
+  File "/home/it-admin/MindIsEye/venv/lib/python3.10/site-packages/nextcord/ext/commands/bot.py", line 969, in reload_extension
+    raise errors.ExtensionNotLoaded(name)
+nextcord.ext.commands.errors.ExtensionNotLoaded: Extension "cogs.{'Mod'}" has not been loaded.

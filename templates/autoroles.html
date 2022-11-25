@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Autoroles
+{% endblock %}
+
+{% block body %}
+<body class="hold-transition sidebar-mini dark-mode">
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Настройка авторолей</h1>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Выдача ролей новым пользователям</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+                            <form action="" method="post">
+                                <div class="card-body">
+                                    <div class="row">
+                                        {% for role in autoroles %}
+                                            {% if role['role_name'] in active_roles %}
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                                        <input type="checkbox" checked class="custom-control-input" id="{{ role['role_id'] }}" name="{{ role['role_id'] }}" value="{{ role['role_name'] }}">
+                                                        <label class="custom-control-label" for="{{ role['role_id'] }}">{{ role['role_name'] }}</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% else %}
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                                        <input type="checkbox" class="custom-control-input" id="{{ role['role_id'] }}" name="{{ role['role_id'] }}" value="{{ role['role_name'] }}">
+                                                        <label class="custom-control-label" for="{{ role['role_id'] }}">{{ role['role_name'] }}</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--/.col (right) -->
+                </div>
+<!--                <div class="row">-->
+<!--                    &lt;!&ndash; left column &ndash;&gt;-->
+<!--                    <div class="col-md-12">-->
+<!--                        &lt;!&ndash; general form elements &ndash;&gt;-->
+<!--                        <div class="card card-primary">-->
+<!--                            <div class="card-header">-->
+<!--                                <h3 class="card-title">Выдача роли по реакции</h3>-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash; /.card-header &ndash;&gt;-->
+<!--                            &lt;!&ndash; form start &ndash;&gt;-->
+<!--                            <form>-->
+<!--                                <div class="card-body">-->
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-sm-6">-->
+<!--                                            &lt;!&ndash; select &ndash;&gt;-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label>Выберите Emoji</label>-->
+<!--                                                <select multiple class="form-control">-->
+<!--                                                    <option>option 1</option>-->
+<!--                                                    <option>option 2</option>-->
+<!--                                                    <option>option 3</option>-->
+<!--                                                    <option>option 4</option>-->
+<!--                                                    <option>option 5</option>-->
+<!--                                                </select>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-sm-6">-->
+<!--                                            &lt;!&ndash; select &ndash;&gt;-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label>Выберите роль</label>-->
+<!--                                                <select multiple class="form-control">-->
+<!--                                                    <option>option 1</option>-->
+<!--                                                    <option>option 2</option>-->
+<!--                                                    <option>option 3</option>-->
+<!--                                                    <option>option 4</option>-->
+<!--                                                    <option>option 5</option>-->
+<!--                                                </select>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="selectReactChannel">Выберите канал.</label>-->
+<!--                                        <select class="custom-select form-control-border" id="selectReactChannel">-->
+<!--                                            <option>#react_role</option>-->
+<!--                                            <option>#any</option>-->
+<!--                                            <option>#any</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; /.card-body &ndash;&gt;-->
+
+<!--                                <div class="card-footer">-->
+<!--                                    <button type="submit" class="btn btn-primary">Добавить</button>-->
+<!--                                </div>-->
+<!--                            </form>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;/.col (right) &ndash;&gt;-->
+<!--                </div>-->
+<!--                <div class="row">-->
+<!--                    &lt;!&ndash; left column &ndash;&gt;-->
+<!--                    <div class="col-md-12">-->
+<!--                        &lt;!&ndash; general form elements &ndash;&gt;-->
+<!--                        <div class="card card-primary">-->
+<!--                            <div class="card-header">-->
+<!--                                <h3 class="card-title">Список ролей по реакциям</h3>-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash; /.card-header &ndash;&gt;-->
+<!--                            <div class="table-responsive">-->
+<!--                                <table class="table m-0">-->
+<!--                                    <thead>-->
+<!--                                    <tr>-->
+<!--                                        <th>Канал</th>-->
+<!--                                        <th>Реакция</th>-->
+<!--                                        <th>Роль</th>-->
+<!--                                    </tr>-->
+<!--                                    </thead>-->
+<!--                                    <tbody>-->
+<!--                                    <tr>-->
+<!--                                        <td>#react_role</td>-->
+<!--                                        <td>Emoji</td>-->
+<!--                                        <td>Role</td>-->
+<!--                                    </tr>-->
+<!--                                    </tbody>-->
+<!--                                </table>-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash; /.table-responsive &ndash;&gt;-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;/.col (right) &ndash;&gt;-->
+<!--                </div>-->
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+</div>
+{% endblock %}

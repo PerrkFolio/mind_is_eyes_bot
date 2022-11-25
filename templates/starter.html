@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/adminlte.min.css') }}">
+</head>
+<body class="dark-mode">
+<div>
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+          <a class="navbar-brand text-center">Добро пожаловать, {{ user.name }}!</a>
+          <form class="form-inline">
+            {% if user.id == owner %}
+            <a href="/dashboard/superadmin" class="btn btn-outline-success my-2 my-sm-0" type="button">Управление конфигурацией</a>
+            {% else %}
+            <a href="#" class="btn btn-outline-warning my-2 my-sm-0" type="button">Купить премиум</a>
+            {% endif %}
+          </form>
+        </nav>
+    </header>
+    <br />
+    <div class="container">
+        <div class="row">
+            {% for guild in guilds %}
+            <div class="col-md-4">
+            <!-- Widget: user widget style 1 -->
+                <div class="card card-widget widget-user">
+                  <!-- Add the bg color to the header using any of the bg-* classes -->
+                  <div class="widget-user-header bg-info">
+                    <h3 class="widget-user-username">{{ guild['name'] }}</h3>
+                    <h5 class="widget-user-desc">Управление сервером</h5>
+                  </div>
+                  <div class="widget-user-image">
+                    {% if guild['icon_url'] is not none %}
+                    <img class="img-circle elevation-2" src="{{ guild['icon_url'] }}" alt="Guild Avatar">
+                    {% endif %}
+                  </div>
+                  <div class="card-footer">
+                    <div class="row">
+                      <div class="col-sm-6 border-right">
+                        <div class="description-block">
+                          <span class="description-text">Участники: <b>{{ guild['member_count'] }}</b></span>
+                        </div>
+                        <!-- /.description-block -->
+                      </div>
+                      <!-- /.col -->
+                      <div class="col-sm-6">
+                          <div class="description-block">
+                              <a type="button" class="btn-sm btn-primary description-text" href="/dashboard/{{ guild['id'] }}">
+                                  {% if guild['member_count'] is none %}
+                                  Добавить
+                                  {% else %}
+                                  Перейти
+                                  {% endif %}
+                              </a>
+                          </div>
+                        <!-- /.description-block -->
+                      </div>
+                      <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                  </div>
+                </div>
+                <!-- /.widget-user -->
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+<script>
+    $.widget.bridge('uibutton', $.ui.button)
+</script>
+<script src="{{ url_for('static', filename='/dist/js/bootstrap.bundle.js') }}"></script>
+<script src="{{ url_for('static', filename='dist/js/adminlte.js') }}"></script>
+</body>
+</html>

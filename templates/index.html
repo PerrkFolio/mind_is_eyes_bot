@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/dist/css/custom.css">
+</head>
+<body>
+<img src="../static/dist/img/vectors/Vector%2010.png" alt="vector10" style="position: absolute; z-index: 990; left: 25%;">
+<header class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/">
+            <img src="../static/dist/img/nav_logo.svg" width="100" height="75" alt="nav_logo" style="z-index: 991;">
+        </a>
+        <button class="navbar-toggler" style="z-index: 991;" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" style="margin-top: -30px" id="navbarNavAltMarkup">
+            <div class="navbar-nav custom-font">
+                <a class="nav-link" href="#">Сервер поддержки</a>
+                <a class="nav-link custom-btn" href="/login">Войти</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<section id="welcome" class="container">
+    <img src="../static/dist/img/vectors/Vector%209.png" alt="vector9" style="position: absolute; z-index: 990; left: 42%; top: 15%;">
+    <img src="../static/dist/img/welcome_logo.svg" alt="welcome_logo" style="position: absolute; z-index: 990; left: 47%; top: 15%;">
+    <h1 style="position: absolute; z-index: 990; left: 67%; top: 91%;">JARISTO CYBER ROOM</h1>
+    <div class="row">
+        <div class="col-5">
+            <h2>Создавайте лучший Discord-сервер!</h2>
+            <p style="margin-top: 2rem;">Настраивайте модерацию, уровни, уведомления Twitch и многое другое с помощью невероятно удобной в использовании панели управления!</p>
+            <div class="options" style="margin-top: 2rem;">
+                <p><img src="../static/dist/img/noty.png" width="40" height="40" alt="noty"> Оповещения Twitch, YouTube</p>
+                <p><img src="../static/dist/img/hearth.png" width="40" height="40" alt="hearth"> Реакции с Ролями</p>
+            </div>
+            <a class="btn add_bot" href="https://discord.com/api/oauth2/authorize?client_id=958028473568464966&permissions=983312100439&scope=bot%20applications.commands" role="button">Добавить в Discord</a>
+            <button type="button" class="btn about_bot" data-toggle="modal" data-target="#aboutModal">
+                Посмотреть возможности
+            </button>
+        </div>
+    </div>
+    <img src="../static/dist/img/vectors/Vector%2011.png" alt="vector11" style="position: absolute; z-index: -1; left: -1%; top: 88%;">
+    <!-- Модальное окно -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="aboutModalLabel">Заголовок модального окна</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="say_hello" class="container" style="margin-top: 25%;">
+    <div class="row">
+        <div class="col-5">
+            <h2>Передавайте привет новым пользователям на вашем Discord-сервере</h2>
+            <p style="margin-top: 2rem;">Воспользуйтесь приветственным сообщением, чтобы проинформировать новичков о правилах вашего сервера, теме или текущих событиях. Вы можете создать свою собственную приветственную открытку или оставить её простой.</p>
+            <a class="btn add_bot" href="https://discord.com/api/oauth2/authorize?client_id=958028473568464966&permissions=983312100439&scope=bot%20applications.commands" role="button">Начните приветствовать пользователей</a>
+        </div>
+        <div class="col-6">
+            <img src="../static/dist/img/say_hello_logo.svg" alt="say_hello_logo" class="d-block m-0 m-auto">
+        </div>
+    </div>
+    <img src="../static/dist/img/vectors/Vector%2032.png" alt="vector32" style="position: absolute; z-index: -1; left: -1%; top: 185%;">
+    <img src="../static/dist/img/vectors/Vector%2014.png" alt="vector14" style="position: absolute; z-index: -1; right: -1%; top: 135%;">
+</section>
+
+<section id="social" class="container" style="margin-top: 15%;">
+    <div class="row">
+        <div class="col-6">
+            <img src="../static/dist/img/social_logo.png" width="500" alt="social_logo" class="d-block m-0 m-auto">
+        </div>
+        <div class="col-6" style="text-align: end !important;">
+            <h2>Быстрая настройка оповещений c социальных сетей и о стримах</h2>
+            <p style="margin-top: 2rem;">Уведомляйте свой сервер, когда вы или ваши любимые создатели контента начинаете стрим, загружаете или публикуете контент.</p>
+            <p style="margin-top: 2rem;">Вы можете легко настроить оповещения о стримах для Twitch, оповещения о загрузке для Youtube и оповещение о постах для Reddit и Twitter.</p>
+            <button type="button" class="btn about_bot" data-toggle="modal" data-target="#aboutModal">
+                Подробнее об подключении социальных сетей
+            </button>
+        </div>
+    </div>
+    <img src="../static/dist/img/vectors/Vector%2026.png" alt="vector26" style="position: absolute; z-index: -1; left: -1%; top: 280%;">
+</section>
+
+<section id="react_roles" class="container" style="margin-top: 17%;">
+    <div class="row">
+        <div class="col-7 text-center">
+            <h2 style="text-align: left;">Предоставьте пользователям свободу выбора ролей используя реакции</h2>
+            <p style="text-align: justify; width: 80%; margin: 0 auto; margin-top: 3rem;">Реакция-Роли готовы к включению на вашем сервере. Предоставьте своему сообществу возможность получать уведомления о новых объявлениях, получать доступ к другим частям вашего Discord-сервера или просто идентифицировать себя, щелкнув на выбранный вами эмодзи сервера.</p>
+            <a class="btn add_bot" href="https://discord.com/api/oauth2/authorize?client_id=958028473568464966&permissions=983312100439&scope=bot%20applications.commands" role="button" style="padding-left: 150px; padding-right: 150px; margin-top: 3rem;">Приступим к сортировке</a>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-4">
+            <img src="../static/dist/img/react_roles_logo.svg" alt="react_roles_logo" class="d-block m-0 m-auto">
+        </div>
+    </div>
+    <img src="../static/dist/img/vectors/Vector%2027.png" alt="vector27" style="position: absolute; z-index: -1; right: -1%; top: 355%;">
+    <img src="../static/dist/img/vectors/Vector%2030.png" alt="vector30" style="position: absolute; z-index: -1; left: -1%; top: 430%;">
+</section>
+
+<section id="end" style="margin: 0; margin-top: 18%; background-image: url('../static/dist/img/end_bg.png'); background-size: 100%; padding: 7%;">
+    <div class="conteiner text-center w-75 m-0 m-auto">
+        <h2>Персонализируйте свой собственный Дискорд-сервер бесплатно уже сегодня</h2>
+        <a class="btn add_bot" href="https://discord.com/api/oauth2/authorize?client_id=958028473568464966&permissions=983312100439&scope=bot%20applications.commands" role="button" style="margin-top: 2.5rem;"><h2>Добавить в Discord</h2></a>
+    </div>
+    <img src="../static/dist/img/vectors/Vector%2033.png" alt="vector33" style="position: absolute; z-index: -1; top: 547%;">
+</section>
+
+<footer class="container" style="margin-top: 4%">
+    <div class="row">
+        <div class="col">
+            <img src="../static/dist/img/nav_logo.svg" width="120" height="95" alt="nav_logo" style="z-index: 991;">
+            <p style="margin-top: 2rem;">Лучший Дискорд-бот, с которым можно уверенно улучшать и развивать свой сервер</p>
+        </div>
+        <div class="col mt-5">
+            <p>JARISTO CYBER ROOM</p>
+            <a href="#"><p>Сервер Поддержки</p></a>
+            <p>Support Contact</p>
+        </div>
+        <div class="col mt-5">
+            <a href="#"><p>Плагины</p></a>
+            <a href="#"><p>Настройки сервера</p></a>
+        </div>
+        <div class="col mt-5">
+            <a href="#"><p>Утилиты</p></a>
+            <a href="#"><p>Подключение социальных сетей</p></a>
+        </div>
+    </div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="../static/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

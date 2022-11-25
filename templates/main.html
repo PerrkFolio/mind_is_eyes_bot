@@ -1,0 +1,348 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Main
+{% endblock %}
+
+{% block body %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+var intervalID = setInterval(update_values,2000);
+
+
+    function update_values() {
+        $.getJSON($SCRIPT_ROOT + '/get_last_messages/{{ guild_id }}',
+
+            function(data) {
+            $('.data_item').detach();
+            data.result.forEach(function(dm){
+              $("#mdata").append("<div class='data_item direct-chat-msg'>"+
+              "<div class='direct-chat-infos clearfix'>"+
+              "<span class='direct-chat-name float-left'>"+dm.author+"</span>"+
+              "<span class='direct-chat-timestamp from-channel float-right'>Канал: "+dm.channel+"</span>"+
+              "</div>"+
+              "<img class='direct-chat-img' src='"+dm.avatar_url+"' alt='Author avatar'>"+
+              "<div class='direct-chat-text'>"+dm.message+"</div>"
+              +"</div>"
+              );
+            });
+        });
+    };
+
+</script>
+
+<body class="hold-transition sidebar-mini dark-mode" onload="update_values();">
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-12">
+            <h1 class="m-0">Информация о сервере</h1>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Info boxes -->
+        <!-- Main row -->
+        <div class="row">
+          <!-- Left col -->
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-6">
+                <!-- DIRECT CHAT -->
+                <div class="card direct-chat direct-chat-warning">
+                  <div class="card-header">
+                    <h3 class="card-title">Последние сообщения</h3>
+
+                    <div class="card-tools">
+                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                      </button>
+                      <button type="button" class="btn btn-tool" data-card-widget="remove">
+                        <i class="fas fa-times"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body" style="min-height: 282px !important;">
+                    <!-- Conversations are loaded here -->
+                    <div id="mdata" class="direct-chat-messages">
+
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <form action="" method="post">
+                      <div class="input-group mb-1">
+                        <select name="quick_channel" class="custom-select form-control-border">
+                            {% for channel in data_channels %}
+                                <option value="{{ channel['id'] }}">#{{ channel['name'] }}</option>
+                            {% endfor %}
+                        </select>
+                      </div>
+                      <div class="input-group">
+                        <input type="text" name="quick_message" placeholder="Написать от имени бота" class="form-control">
+                        <input type="text" name="action_for" class="form-control d-none" value="send_message">
+                        <span class="input-group-append">
+                          <button type="submit" class="btn btn-warning">Отправить</button>
+                        </span>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- /.card-footer-->
+                </div>
+                <!--/.direct-chat -->
+              </div>
+              <!-- /.col -->
+
+              <div class="col-md-6">
+                <!-- USERS LIST -->
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Новые участники</h3>
+
+                    <div class="card-tools">
+                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                      </button>
+                      <button type="button" class="btn btn-tool" data-card-widget="remove">
+                        <i class="fas fa-times"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body p-0">
+                    <ul class="users-list clearfix">
+                    {% if user_list_len >= 12 %}
+                      {% for user in short_user_list %}
+                      <li>
+                        {% if user.avatar_url is not none %}
+                        <img src="{{ user.avatar_url }}" alt="User Image">
+                        {% else %}
+                        <img src="{{ url_for('static', filename='dist/img/user.png') }}" width="96.5" height="96.5" alt="User Image">
+                        {% endif %}
+                        <a class="users-list-name" href="#">{{ user.name }}</a>
+                      </li>
+                      {% endfor %}
+                    {% else %}
+                      {% for user in user_list %}
+                      <li>
+                        {% if user.avatar_url is not none %}
+                        <img src="{{ user.avatar_url }}" alt="User Image">
+                        {% else %}
+                        <img src="{{ url_for('static', filename='dist/img/user.png') }}" width="96.5" height="96.5" alt="User Image">
+                        {% endif %}
+                        <a class="users-list-name" href="#">{{ user.name }}</a>
+                      </li>
+                      {% endfor %}
+                    {% endif %}
+                    </ul>
+                    <!-- /.users-list -->
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer text-center">
+                    <a type="button" data-toggle="modal" data-target="#all_users">Список всех участников</a>
+                  </div>
+                  <!-- /.card-footer -->
+                </div>
+                <!--/.card -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+
+          <div class="col-md-4">
+            <!-- Info Boxes Style 2 -->
+            <div class="info-box mb-3 bg-warning">
+              <span class="info-box-icon"><i class="fas fa-users"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Участников сервера</span>
+                <span class="info-box-number">{{ guild['member_count'] }}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <div class="info-box mb-3 bg-danger">
+              <span class="info-box-icon"><i class="fas fa-stream"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Проведено стримов</span>
+                <span class="info-box-number">{{ count_streams }}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+            <div class="info-box mb-3 bg-info">
+              <span class="info-box-icon"><i class="far fa-comment"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Отправлено сообщений</span>
+                <span class="info-box-number">{{ message_count }}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <!-- TABLE: LATEST ORDERS -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Предстоящие стримы</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table m-0">
+                    <thead>
+                    <tr>
+                      <th>Стример</th>
+                      <th>Название</th>
+<!--                      <th>Дата начала</th>-->
+<!--                      <th>Время начала</th>-->
+                      <th>Статус</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for stream in stream_list %}
+                      <tr>
+                        <td>{{ stream['username'] }}</td>
+                        <td>{{ stream['title'] }}</td>
+<!--                        <td>{{ stream['start_date'] }}</td>-->
+<!--                        <td>{{ stream['start_time'] }}</td>-->
+                        {% if stream['status'] == "В ЭФИРЕ" %}
+                          <td><span class="badge badge-danger">{{ stream['status'] }}</span></td>
+                        {% elif stream['status'] == "Запланирован" %}
+                          <td><span class="badge badge-warning">{{ stream['status'] }}</span></td>
+                        {% else %}
+                          <td><span class="badge badge-secondary">{{ stream['status'] }}</span></td>
+                        {% endif %}
+                      </tr>
+                    {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.table-responsive -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <a href="{{ url_for('streams', guild_id=guild_id) }}" type="button" class="btn btn-primary">
+                  Редактировать
+                </a>
+              </div>
+              <!-- /.card-footer -->
+            </div>
+          </div>
+
+        </div>
+        <!-- /.row -->
+      </div><!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Модальное окно -->
+  <div class="modal fade" id="all_users" tabindex="-1" aria-labelledby="all_users_label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="all_users_label">Все участники сервера</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul class="users-list clearfix">
+            {% for user in user_list %}
+            <li>
+              {% if user.avatar_url is not none %}
+              <img src="{{ user.avatar_url }}" alt="User Image">
+              {% else %}
+              <img src="{{ url_for('static', filename='dist/img/user.png') }}" width="96.5" height="96.5" alt="User Image">
+              {% endif %}
+              <a class="users-list-name" href="#">{{ user.name }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--  <div class="modal fade" id="add_twitch_account" tabindex="-1" aria-labelledby="add_twitch_account_label" aria-hidden="true">-->
+<!--    <div class="modal-dialog-center">-->
+<!--      <form action="" method="post">-->
+<!--        <div class="modal-content">-->
+<!--          <div class="modal-header">-->
+<!--            <h5 class="modal-title" id="add_twitch_account_label">Отслеживать рассписание аккаунта.</h5>-->
+<!--            <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--              <span aria-hidden="true">&times;</span>-->
+<!--            </button>-->
+<!--          </div>-->
+<!--          <div class="modal-body">-->
+<!--            <div class="form-group">-->
+<!--              <label for="twitchAccount">Twitch аккаунт</label>-->
+<!--              <input type="text" name="twitch_account" class="form-control" id="twitchAccount" value="https://www.twitch.tv/">-->
+<!--              <input type="text" name="action_for" class="form-control d-none" value="twitch">-->
+<!--              <small>Укажите ссылку на аккаунт, расспиание которого нужно отслеживать.</small>-->
+<!--            </div>-->
+<!--            <div class="form-group mt-1">-->
+<!--              <div class="input-group">-->
+<!--                <select name="noty_channel" class="custom-select form-control-border">-->
+<!--                    {% for channel in data_channels %}-->
+<!--                        <option value="{{ channel['id'] }}">#{{ channel['name'] }}</option>-->
+<!--                    {% endfor %}-->
+<!--                </select>-->
+<!--              </div>-->
+<!--              <small>Выберите канал для уведомлений</small>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="modal-footer">-->
+<!--            <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-hidden="true">Закрыть</button>-->
+<!--            <button type="submit" class="btn btn-primary">Добавить</button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+
+</div>
+{% endblock %}

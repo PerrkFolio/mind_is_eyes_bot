@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Errors
+{% endblock %}
+
+{% block body %}
+<body class="hold-transition sidebar-mini dark-mode">
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Настройка исключений</h1>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Редактировать</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+                            <form action="" method="post">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="checkFailure">Отказано в доступе</label>
+                                        <input type="text" name="error_checkfailure" class="form-control" id="checkFailure" value="{{ error_checkfailure }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="commandNotFound">Команда не найдена</label>
+                                        <input type="text" name="error_commandnotfound" class="form-control" id="commandNotFound" value="{{ error_commandnotfound }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="missingRequiredArgument">Не найден нужный аргумент</label>
+                                        <input type="text" name="error_missingrequiredargument" class="form-control" id="missingRequiredArgument" value="{{ error_missingrequiredargument }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="badArgument">Передан неверный аргумент</label>
+                                        <input type="text" name="error_badargument" class="form-control" id="badArgument" value="{{ error_badargument }}">
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">Обновить</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--/.col (right) -->
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+</div>
+{% endblock %}
